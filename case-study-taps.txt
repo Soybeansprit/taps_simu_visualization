@@ -1,0 +1,30 @@
+ IF temperature<=10 THEN AirConditioner_0.turn_ac_heat
+ IF temperature>=28 THEN AirConditioner_0.turn_ac_cool
+ IF humidity<20 THEN Humidifier_0.turn_hum_on
+ IF Person.Living_room THEN Window_1.open_window
+ IF Person.Living_room THEN TV_0.turn_tv_on
+ IF TV_0.tvon THEN Bulb_0.turn_bulb_on
+ IF Person.Kitchen THEN Bulb_1.turn_bulb_on
+ IF Person.Bedroom THEN Bulb_3.turn_bulb_on
+ IF Person.Bathroom THEN Bulb_2.turn_bulb_on
+ IF Person.Guest_room THEN Bulb_4.turn_bulb_on,Window_3.open_window
+ IF Person.Out THEN Bulb_0.turn_bulb_off,Bulb_1.turn_bulb_off,Bulb_2.turn_bulb_off,Bulb_3.turn_bulb_off,Bulb_4.turn_bulb_off
+ IF Person.Out THEN Window_0.close_window,Window_1.close_window,Window_2.close_window,Window_3.close_window
+ IF Person.Out THEN Blind_0.close_blind, Blind_1.close_blind
+ IF Person.Out THEN AirConditioner_0.turn_ac_off,Humidifier_0.turn_hum_off
+ IF Rain.isRain THEN Window_1.close_window,Window_2.close_window
+ IF AirConditioner_0.cool THEN Window_0.close_window,Window_1.close_window
+ IF AirConditioner_0.heat THEN Window_0.close_window,Window_1.close_window
+ IF co2ppm>1100 THEN Window_0.open_window
+ IF co2ppm>800 THEN AirPurifier_0.turn_ap_on
+ IF pm_2_5>75 THEN AirPurifier_0.turn_ap_on
+ IF co2ppm<400 AND pm_2_5<20 THEN AirPurifier_0.turn_ap_off
+ IF NOT_Person.Living_room THEN Bulb_0.turn_bulb_off
+ IF NOT_Person.Living_room THEN TV_0.turn_tv_off
+ IF NOT_Person.Kitchen THEN Bulb_1.turn_bulb_off
+ IF NOT_Person.Bedroom THEN Bulb_3.turn_bulb_off
+ IF NOT_Person.Bathroom THEN Bulb_2.turn_bulb_off
+ IF NOT_Person.Guest_room THEN Bulb_4.turn_bulb_off
+ IF NOT_Person.Out THEN Blind_0.open_blind,Blind_1.open_blind
+ IF humidity>75 THEN Humidifier_0.turn_hum_off
+ IF NOT_Person.Out THEN Camera_0.turn_camera_on
