@@ -34,62 +34,62 @@ clock t;</declaration>
 		<name>Rain</name>
 		<declaration>//biddable
 clock t;</declaration>
-		<location id="id3" x="-76" y="-68">
+		<location id="id3" x="-119" y="-17">
 			<committed/>
 		</location>
 		<location id="id4" x="-229" y="-17">
-			<name x="-272" y="-42">notRain</name>
+			<name x="-255" y="-42">notRain</name>
 			<label kind="invariant" x="-263" y="-9">t&lt;=30</label>
 		</location>
-		<location id="id5" x="77" y="-17">
-			<name x="76" y="-42">isRain</name>
-			<label kind="invariant" x="77" y="0">t&lt;=30</label>
+		<location id="id5" x="-17" y="-17">
+			<name x="-34" y="-42">isRain</name>
+			<label kind="invariant" x="-17" y="-9">t&lt;=30</label>
 		</location>
-		<branchpoint id="id6" x="-229" y="102">
+		<branchpoint id="id6" x="-17" y="51">
 		</branchpoint>
-		<branchpoint id="id7" x="-76" y="-17">
+		<branchpoint id="id7" x="-229" y="51">
 		</branchpoint>
 		<init ref="id3"/>
 		<transition>
 			<source ref="id6"/>
 			<target ref="id5"/>
-			<label kind="assignment" x="-187" y="85">rain=1,t=0</label>
-			<label kind="probability" x="-187" y="59">2</label>
+			<label kind="assignment" x="-26" y="25">rain=1,t=0</label>
+			<label kind="probability" x="0" y="34">2</label>
+			<nail x="42" y="-17"/>
 		</transition>
 		<transition>
 			<source ref="id6"/>
 			<target ref="id4"/>
-			<label kind="assignment" x="-314" y="42">rain=0,t=0</label>
-			<label kind="probability" x="-296" y="59">8</label>
-			<nail x="-314" y="-17"/>
-		</transition>
-		<transition>
-			<source ref="id4"/>
-			<target ref="id6"/>
-			<label kind="guard" x="-263" y="8">t&gt;=30</label>
+			<label kind="assignment" x="-102" y="17">rain=0,t=0</label>
+			<label kind="probability" x="-51" y="34">8</label>
 		</transition>
 		<transition>
 			<source ref="id5"/>
+			<target ref="id6"/>
+			<label kind="guard" x="-17" y="8">t&gt;=30</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
 			<target ref="id4"/>
-			<label kind="guard" x="77" y="17">t&gt;=30</label>
-			<label kind="assignment" x="-8" y="85">rain=0,t=0</label>
-			<nail x="77" y="102"/>
+			<label kind="assignment" x="-204" y="-34">rain=0,t=0</label>
 		</transition>
 		<transition>
 			<source ref="id7"/>
 			<target ref="id5"/>
-			<label kind="assignment" x="-51" y="-34">rain=1,t=0</label>
-			<label kind="probability" x="-34" y="-17">2</label>
+			<label kind="assignment" x="-204" y="17">rain=1,t=0</label>
+			<label kind="probability" x="-204" y="34">2</label>
 		</transition>
 		<transition>
 			<source ref="id7"/>
 			<target ref="id4"/>
-			<label kind="assignment" x="-170" y="-34">rain=0,t=0</label>
-			<label kind="probability" x="-153" y="-17">8</label>
+			<label kind="assignment" x="-280" y="25">rain=0,t=0</label>
+			<label kind="probability" x="-255" y="34">8</label>
+			<nail x="-289" y="-17"/>
 		</transition>
 		<transition>
-			<source ref="id3"/>
+			<source ref="id4"/>
 			<target ref="id7"/>
+			<label kind="guard" x="-263" y="8">t&gt;=30</label>
 		</transition>
 	</template>
 	<template>
@@ -132,16 +132,16 @@ clock t;</declaration>
 		<transition>
 			<source ref="id11"/>
 			<target ref="id10"/>
-			<label kind="synchronisation" x="8" y="93">turn_bulb_off[i]?</label>
-			<label kind="assignment" x="8" y="59">bulb[i]=0</label>
-			<nail x="68" y="85"/>
+			<label kind="synchronisation" x="-59" y="42">turn_bulb_off[i]?</label>
+			<label kind="assignment" x="-59" y="59">bulb[i]=0</label>
+			<nail x="-59" y="85"/>
 		</transition>
 		<transition>
 			<source ref="id10"/>
 			<target ref="id11"/>
-			<label kind="synchronisation" x="-102" y="59">turn_bulb_on[i]?</label>
-			<label kind="assignment" x="-102" y="76">bulb[i]=1</label>
-			<nail x="-68" y="85"/>
+			<label kind="synchronisation" x="-34" y="102">turn_bulb_on[i]?</label>
+			<label kind="assignment" x="8" y="85">bulb[i]=1</label>
+			<nail x="59" y="85"/>
 		</transition>
 	</template>
 	<template>
@@ -177,23 +177,23 @@ clock t;</declaration>
 		<location id="id14" x="0" y="25">
 			<name x="17" y="16">wopen</name>
 		</location>
-		<location id="id15" x="0" y="119">
-			<name x="-68" y="110">wclosed</name>
+		<location id="id15" x="0" y="127">
+			<name x="-59" y="119">wclosed</name>
 		</location>
 		<init ref="id15"/>
 		<transition>
 			<source ref="id15"/>
 			<target ref="id14"/>
-			<label kind="synchronisation" x="-9" y="42">open_window[i]?</label>
-			<label kind="assignment" x="17" y="59">window[i]=1</label>
-			<nail x="51" y="76"/>
+			<label kind="synchronisation" x="-42" y="51">open_window[i]?</label>
+			<label kind="assignment" x="-17" y="34">window[i]=1</label>
+			<nail x="59" y="76"/>
 		</transition>
 		<transition>
 			<source ref="id14"/>
 			<target ref="id15"/>
-			<label kind="synchronisation" x="-85" y="76">close_window[i]?</label>
-			<label kind="assignment" x="-85" y="59">window[i]=0</label>
-			<nail x="-51" y="68"/>
+			<label kind="synchronisation" x="-59" y="76">close_window[i]?</label>
+			<label kind="assignment" x="-59" y="93">window[i]=0</label>
+			<nail x="-59" y="76"/>
 		</transition>
 	</template>
 	<template>
