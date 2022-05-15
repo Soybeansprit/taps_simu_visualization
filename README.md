@@ -1,4 +1,6 @@
 # taps_simu_visualization
+
+
 Documents related to the case study are in folder "case", including:
 1. File, "behavior_models_with_system_device_models_and_service_context_models.xml", gives the system device models and the service context models mentioned in case study. 
 2. Folder, "Assets", gives the animation assets.
