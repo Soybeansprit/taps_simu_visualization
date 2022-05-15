@@ -3,7 +3,7 @@ Documents about case study are in folder "case", including:
 
 1. File, "behavior_models_with_system_device_models_and_service_context_models.xml", gives the system device models and the service context models mentioned in case study. 
 
-2. 
+2. Folder, "Assets", gives the animation assets.
 
 3. File, "case-study-taps.txt", gives the 30 TAPs providered by the end user in case study.
 
@@ -24,3 +24,6 @@ The relation codes are in folder "codes", including:
 1. synthesis_simulation-code: Including the code of the synthesis of the system behavior model, the generation of the service scenarios, and the simulation of the service scenarios. It takes the system device models, the TAPs,  the service context models, the TAPs, and the instance information as the inputs, and outputs the synthesized system behavior model, the service scenarios, and finally the simulation traces of each scenario.
 
 2. animation-code: The code of the generation of the animation specification. Taking the simulation traces and the animation asset as the inputs, and outputs the animation specification, and finally the animation.
+
+The running environment:  
+A machine that is configured with CPU Inter (R) Core (TM) i74790 @ 3.60GHz, 12.0 G RAM, and Windows 10 (64bit).
