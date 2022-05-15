@@ -17,7 +17,7 @@
 		* Before running, we should reset the address information in java code: synthesis_simulation-code\simulation-visualization\src\main\java\com\example\demo\serviceAddressService.java. <br>
 			>> 1) The "MODEL_FILE_PATH" is the path of the behavior model, e.g. "behavior_models_with_system_device_models_and_service_context_models.xml".<br>
 			>> 2) The "UPPAAL_PATH" is the path of the executable file "uppaal.exe" in platform UPPAAL-SMC. Tool UPPAAL-SMC should be downloaded first.<br>
-					>>>> Simulation is procceed under [uppaal-4.1.24](https://uppaal.org/downloads/).<br>
+					>>>> Simulation is procceed under [uppaal-4.1.24+](https://uppaal.org/downloads/).<br>
 			>> 3) The "ONTOLOGY_FILE_NAME" should be the file name of the behavior model, e.g. "behavior_models_with_system_device_models_and_service_context_models.xml".<br>
 			>> 4) The "DEVICE_POSITION_INFORMATION_FILE_NAME"  is the file name of instance information, e.g. "instancesInformation.properties".<br>
 2. **animation-code**: The code of the generation of the animation specification. Taking the simulation traces and the animation asset as the inputs, and outputs the animation specification, and finally the animation.<br>
