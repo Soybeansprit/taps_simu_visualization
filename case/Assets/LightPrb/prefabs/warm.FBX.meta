@@ -1,0 +1,265 @@
+fileFormatVersion: 2
+guid: a3259d3dd28628f4ebaf2ffee3999e87
+timeCreated: 1563435867
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: bulb004
+    100002: bulb005
+    100004: bulb3
+    100006: bulbglass001
+    100008: bulbglass002
+    100010: bulbglass003
+    100012: Circle001
+    100014: Circle002
+    100016: Circle003
+    100018: Cylinder006
+    100020: Cylinder007
+    100022: Cylinder008
+    100024: Group001
+    100026: Group002
+    100028: Group003
+    100030: Group004
+    100032: Group005
+    100034: Group006
+    100036: Line016
+    100038: Line019
+    100040: Line020
+    100042: Line021
+    100044: Line022
+    100046: Line023
+    100048: Line024
+    100050: Line12
+    100052: Line15
+    100054: p149
+    100056: Rectangle001
+    100058: Rectangle002
+    100060: Rectangle003
+    100062: Shape027
+    100064: Shape028
+    100066: Shape029
+    100068: Shape030
+    100070: Shape031
+    100072: Shape032
+    100074: Shape033
+    100076: Shape034
+    100078: Shape035
+    100080: Shape036
+    100082: Shape037
+    100084: Shape038
+    100086: Shape039
+    100088: Shape040
+    100090: Shape041
+    100092: Shape042
+    100094: Shape043
+    100096: Shape044
+    100098: Shape045
+    100100: Shape046
+    100102: Shape047
+    100104: Shape15
+    100106: Shape16
+    100108: Shape17
+    100110: Shape27
+    100112: //RootNode
+    400000: bulb004
+    400002: bulb005
+    400004: bulb3
+    400006: bulbglass001
+    400008: bulbglass002
+    400010: bulbglass003
+    400012: Circle001
+    400014: Circle002
+    400016: Circle003
+    400018: Cylinder006
+    400020: Cylinder007
+    400022: Cylinder008
+    400024: Group001
+    400026: Group002
+    400028: Group003
+    400030: Group004
+    400032: Group005
+    400034: Group006
+    400036: Line016
+    400038: Line019
+    400040: Line020
+    400042: Line021
+    400044: Line022
+    400046: Line023
+    400048: Line024
+    400050: Line12
+    400052: Line15
+    400054: p149
+    400056: Rectangle001
+    400058: Rectangle002
+    400060: Rectangle003
+    400062: Shape027
+    400064: Shape028
+    400066: Shape029
+    400068: Shape030
+    400070: Shape031
+    400072: Shape032
+    400074: Shape033
+    400076: Shape034
+    400078: Shape035
+    400080: Shape036
+    400082: Shape037
+    400084: Shape038
+    400086: Shape039
+    400088: Shape040
+    400090: Shape041
+    400092: Shape042
+    400094: Shape043
+    400096: Shape044
+    400098: Shape045
+    400100: Shape046
+    400102: Shape047
+    400104: Shape15
+    400106: Shape16
+    400108: Shape17
+    400110: Shape27
+    400112: //RootNode
+    2100000: 'Material #20'
+    2100002: Provod
+    2100004: Glass
+    2100006: Chrome_matte
+    2100008: Plastic_matte
+    2100010: 'Material #18'
+    2100012: 'Material #1821'
+    2100014: 'Material #202'
+    2100016: 'Material #182'
+    2300000: bulbglass001
+    2300002: bulbglass002
+    2300004: bulbglass003
+    2300006: Circle001
+    2300008: Circle002
+    2300010: Circle003
+    2300012: Cylinder006
+    2300014: Cylinder007
+    2300016: Cylinder008
+    2300018: Line019
+    2300020: Line020
+    2300022: Line021
+    2300024: Line022
+    2300026: Line023
+    2300028: Line024
+    2300030: Rectangle001
+    2300032: Rectangle002
+    2300034: Rectangle003
+    3300000: bulbglass001
+    3300002: bulbglass002
+    3300004: bulbglass003
+    3300006: Circle001
+    3300008: Circle002
+    3300010: Circle003
+    3300012: Cylinder006
+    3300014: Cylinder007
+    3300016: Cylinder008
+    3300018: Line019
+    3300020: Line020
+    3300022: Line021
+    3300024: Line022
+    3300026: Line023
+    3300028: Line024
+    3300030: Rectangle001
+    3300032: Rectangle002
+    3300034: Rectangle003
+    4300000: Line023
+    4300002: Rectangle002
+    4300004: bulbglass003
+    4300006: Cylinder008
+    4300008: Circle002
+    4300010: Line020
+    4300012: Line022
+    4300014: bulbglass002
+    4300016: Cylinder007
+    4300018: Circle003
+    4300020: Rectangle001
+    4300022: Line021
+    4300024: Line024
+    4300026: Rectangle003
+    4300028: Circle001
+    4300030: Line019
+    4300032: Cylinder006
+    4300034: bulbglass001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
