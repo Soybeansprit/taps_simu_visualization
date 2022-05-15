@@ -1,7 +1,7 @@
 # taps_simu_visualization
 
 
-##Documents related to the case study are in folder "case", including:
+## Documents related to the case study are in folder "case", including:
 1. File, "behavior_models_with_system_device_models_and_service_context_models.xml", gives the system device models and the service context models mentioned in case study. 
 2. Folder, "Assets", gives the animation assets.
 3. File, "case-study-taps.txt", gives the 30 TAPs providered by the end user in case study.
@@ -12,7 +12,7 @@
 8. File, "animation_specification_of_service_scenario2.json", is the corresponding animation specification consisting of a several frames under the service scenario 2 in case study.
 9. File, "animation_video.mp4", is the generated animation corresponding to animation specification of ""animation_specification_of_service_scenario2.json"" in case study.
 
-##The relation codes are in folder "codes", including:
+## The relation codes are in folder "codes", including:
 1. synthesis_simulation-code: Including the code of the synthesis of the system behavior model, the generation of the service scenarios, and the simulation of the service scenarios. It takes the system device models, the TAPs,  the service context models, the TAPs, and the instance information as the inputs, and outputs the synthesized system behavior model, the service scenarios, and finally the simulation traces of each scenario.
 		- Before running, we should reset the address information in java code: synthesis_simulation-code\simulation-visualization\src\main\java\com\example\demo\serviceAddressService.java. 
 		- 1) The "MODEL_FILE_PATH" is the path of the behavior model, e.g. "behavior_models_with_system_device_models_and_service_context_models.xml".
@@ -31,5 +31,5 @@
 			- 3) Click the visualization, which will generate the animation specification, and finally the animation.
 
 
-##The running environment:  
+## The running environment:  
 A machine that is configured with CPU Inter (R) Core (TM) i74790 @ 3.60GHz, 12.0 G RAM, and Windows 10 (64bit).
