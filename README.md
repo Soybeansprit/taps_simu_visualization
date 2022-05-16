@@ -14,7 +14,8 @@
 
 ## The relation codes are in folder "codes", including:
 1. **synthesis_simulation-code**: Including the code of the synthesis of the system behavior model, the generation of the service scenarios, and the simulation of the service scenarios. It takes the system device models, the TAPs,  the service context models, the TAPs, and the instance information as the inputs, and outputs the synthesized system behavior model, the service scenarios, and finally the simulation traces of each scenario. <br>
-		* Before running, we should reset the address information in java code: synthesis_simulation-code\simulation-visualization\src\main\java\com\example\demo\serviceAddressService.java. <br>
+
+		* Before running, we should reset the address information in java code: synthesis_simulation-code\simulation-visualization\src\main\java\com\example\demo\serviceAddressService.java. 
 			
 			1) The "MODEL_FILE_PATH" is the path of the behavior model, e.g. "behavior_models_with_system_device_models_and_service_context_models.xml".
 			2) The "UPPAAL_PATH" is the path of the executable file "uppaal.exe" in platform UPPAAL-SMC. Tool UPPAAL-SMC should be downloaded first.
@@ -27,8 +28,8 @@
 		2.2 smartunity-master: The unity related code to obtain the visualization animation for the animation specification.
 3. **frontend-code**: The front-end code of the tool TAP Animator.
 		
-		* Running under Angular CLI: 11.0.7<br>
-		* After running, <br>
+		* Running under Angular CLI: 11.0.7
+		* After running, 
 			1) Add the TAPs. 
 			2) Click the simulation button, which will generate the system behavior model, then the service scenario, and simulate the service scenario to generate the simulation trace.
 			3) Click the visualization, which will generate the animation specification, and finally the animation.
