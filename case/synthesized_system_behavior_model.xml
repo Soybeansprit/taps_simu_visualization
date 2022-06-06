@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
 <nta>
-	 
-   
-     <declaration>clock humidity=19.0;
+	<declaration>clock humidity=19.0;
 clock pm_2_5=76.0;
 clock temperature=9.0;
 int[0,1] rain;
@@ -65,2771 +64,1875 @@ int[0,1] rule29=0;
 int[0,1] rule30=0;
 clock time=0.0;
 </declaration>
-	
-	 
-   
-     <template>
-         <name>Rule30</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_camera_on[0]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position!=5</label>
-             <label kind="assignment">rule30=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position==5</label>
-             <label kind="assignment" x="-290" y="70">rule30=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule29</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_hum_off[0]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">humidity&gt;75</label>
-             <label kind="assignment">rule29=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">humidity&lt;=75</label>
-             <label kind="assignment" x="-290" y="70">rule29=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule28</name>
-         <declaration>clock t;</declaration>
-         <location id="id4" x="150" y="0">
-             <committed/>
-        </location>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id4"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">open_blind[1]!</label>
-             <nail x="150" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id4"/>
-             <label kind="synchronisation">open_blind[0]!</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position!=5</label>
-             <label kind="assignment">rule28=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position==5</label>
-             <label kind="assignment" x="-290" y="70">rule28=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule27</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_bulb_off[4]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position!=4</label>
-             <label kind="assignment">rule27=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position==4</label>
-             <label kind="assignment" x="-290" y="70">rule27=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule26</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_bulb_off[2]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position!=2</label>
-             <label kind="assignment">rule26=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position==2</label>
-             <label kind="assignment" x="-290" y="70">rule26=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule25</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_bulb_off[3]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position!=3</label>
-             <label kind="assignment">rule25=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position==3</label>
-             <label kind="assignment" x="-290" y="70">rule25=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule24</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_bulb_off[1]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position!=1</label>
-             <label kind="assignment">rule24=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position==1</label>
-             <label kind="assignment" x="-290" y="70">rule24=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule23</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_tv_off[0]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position!=0</label>
-             <label kind="assignment">rule23=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position==0</label>
-             <label kind="assignment" x="-290" y="70">rule23=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule22</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_bulb_off[0]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position!=0</label>
-             <label kind="assignment">rule22=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position==0</label>
-             <label kind="assignment" x="-290" y="70">rule22=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule21</name>
-         <declaration>clock t;</declaration>
-         <location id="id4" x="150" y="0">
-             <committed/>
-        </location>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id4"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_ap_off[0]!</label>
-             <nail x="150" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id4"/>
-             <label kind="guard">pm_2_5&lt;20</label>
-             <label kind="assignment">rule21=1</label>
-        </transition>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="190">pm_2_5&gt;=20</label>
-             <label kind="assignment" x="-290" y="160">rule21=0</label>
-             <nail x="0" y="180"/>
-             <nail x="-300" y="180"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">co2ppm&lt;400</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">co2ppm&gt;=400</label>
-             <label kind="assignment" x="-290" y="70">rule21=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule20</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_ap_on[0]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">pm_2_5&gt;75</label>
-             <label kind="assignment">rule20=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">pm_2_5&lt;=75</label>
-             <label kind="assignment" x="-290" y="70">rule20=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule19</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_ap_on[0]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">co2ppm&gt;800</label>
-             <label kind="assignment">rule19=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">co2ppm&lt;=800</label>
-             <label kind="assignment" x="-290" y="70">rule19=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule18</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">open_window[1]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">co2ppm&gt;1100</label>
-             <label kind="assignment">rule18=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">co2ppm&lt;=1100</label>
-             <label kind="assignment" x="-290" y="70">rule18=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule17</name>
-         <declaration>clock t;</declaration>
-         <location id="id4" x="150" y="0">
-             <committed/>
-        </location>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id4"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">close_window[2]!</label>
-             <nail x="150" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id4"/>
-             <label kind="synchronisation">close_window[1]!</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">airConditioner[0]==2</label>
-             <label kind="assignment">rule17=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">airConditioner[0]!=2</label>
-             <label kind="assignment" x="-290" y="70">rule17=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule16</name>
-         <declaration>clock t;</declaration>
-         <location id="id4" x="150" y="0">
-             <committed/>
-        </location>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id4"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">close_window[2]!</label>
-             <nail x="150" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id4"/>
-             <label kind="synchronisation">close_window[1]!</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">airConditioner[0]==1</label>
-             <label kind="assignment">rule16=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">airConditioner[0]!=1</label>
-             <label kind="assignment" x="-290" y="70">rule16=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule15</name>
-         <declaration>clock t;</declaration>
-         <location id="id4" x="150" y="0">
-             <committed/>
-        </location>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id4"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">close_window[3]!</label>
-             <nail x="150" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id4"/>
-             <label kind="synchronisation">close_window[2]!</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">rain==1</label>
-             <label kind="assignment">rule15=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">rain!=1</label>
-             <label kind="assignment" x="-290" y="70">rule15=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule14</name>
-         <declaration>clock t;</declaration>
-         <location id="id4" x="150" y="0">
-             <committed/>
-        </location>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id4"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_hum_off[0]!</label>
-             <nail x="150" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id4"/>
-             <label kind="synchronisation">turn_ac_off[0]!</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position==5</label>
-             <label kind="assignment">rule14=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position!=5</label>
-             <label kind="assignment" x="-290" y="70">rule14=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule13</name>
-         <declaration>clock t;</declaration>
-         <location id="id4" x="150" y="0">
-             <committed/>
-        </location>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id4"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">close_blind[1]!</label>
-             <nail x="150" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id4"/>
-             <label kind="synchronisation">close_blind[0]!</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position==5</label>
-             <label kind="assignment">rule13=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position!=5</label>
-             <label kind="assignment" x="-290" y="70">rule13=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule12</name>
-         <declaration>clock t;</declaration>
-         <location id="id6" x="450" y="0">
-             <committed/>
-        </location>
-         <location id="id5" x="300" y="0">
-             <committed/>
-        </location>
-         <location id="id4" x="150" y="0">
-             <committed/>
-        </location>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id6"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">close_window[0]!</label>
-             <nail x="450" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id5"/>
-             <target ref="id6"/>
-             <label kind="synchronisation">close_window[3]!</label>
-        </transition>
-         <transition>
-             <source ref="id4"/>
-             <target ref="id5"/>
-             <label kind="synchronisation">close_window[2]!</label>
-        </transition>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id4"/>
-             <label kind="synchronisation">close_window[1]!</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position==5</label>
-             <label kind="assignment">rule12=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position!=5</label>
-             <label kind="assignment" x="-290" y="70">rule12=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule11</name>
-         <declaration>clock t;</declaration>
-         <location id="id7" x="600" y="0">
-             <committed/>
-        </location>
-         <location id="id6" x="450" y="0">
-             <committed/>
-        </location>
-         <location id="id5" x="300" y="0">
-             <committed/>
-        </location>
-         <location id="id4" x="150" y="0">
-             <committed/>
-        </location>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id7"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_bulb_off[4]!</label>
-             <nail x="600" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id6"/>
-             <target ref="id7"/>
-             <label kind="synchronisation">turn_bulb_off[3]!</label>
-        </transition>
-         <transition>
-             <source ref="id5"/>
-             <target ref="id6"/>
-             <label kind="synchronisation">turn_bulb_off[2]!</label>
-        </transition>
-         <transition>
-             <source ref="id4"/>
-             <target ref="id5"/>
-             <label kind="synchronisation">turn_bulb_off[1]!</label>
-        </transition>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id4"/>
-             <label kind="synchronisation">turn_bulb_off[0]!</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position==5</label>
-             <label kind="assignment">rule11=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position!=5</label>
-             <label kind="assignment" x="-290" y="70">rule11=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule10</name>
-         <declaration>clock t;</declaration>
-         <location id="id4" x="150" y="0">
-             <committed/>
-        </location>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id4"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">open_window[0]!</label>
-             <nail x="150" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id4"/>
-             <label kind="synchronisation">turn_bulb_on[4]!</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position==4</label>
-             <label kind="assignment">rule10=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position!=4</label>
-             <label kind="assignment" x="-290" y="70">rule10=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule9</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_bulb_on[2]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position==2</label>
-             <label kind="assignment">rule9=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position!=2</label>
-             <label kind="assignment" x="-290" y="70">rule9=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule8</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_bulb_on[3]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position==3</label>
-             <label kind="assignment">rule8=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position!=3</label>
-             <label kind="assignment" x="-290" y="70">rule8=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule7</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_bulb_on[1]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position==1</label>
-             <label kind="assignment">rule7=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position!=1</label>
-             <label kind="assignment" x="-290" y="70">rule7=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule6</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_bulb_on[0]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">tV[0]==1</label>
-             <label kind="assignment">rule6=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">tV[0]!=1</label>
-             <label kind="assignment" x="-290" y="70">rule6=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule5</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_tv_on[0]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position==0</label>
-             <label kind="assignment">rule5=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position!=0</label>
-             <label kind="assignment" x="-290" y="70">rule5=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule4</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">open_window[2]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">position==0</label>
-             <label kind="assignment">rule4=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">position!=0</label>
-             <label kind="assignment" x="-290" y="70">rule4=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule3</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_hum_on[0]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">humidity&lt;20</label>
-             <label kind="assignment">rule3=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">humidity&gt;=20</label>
-             <label kind="assignment" x="-290" y="70">rule3=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule2</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_ac_cool[0]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">temperature&gt;=28</label>
-             <label kind="assignment">rule2=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">temperature&lt;28</label>
-             <label kind="assignment" x="-290" y="70">rule2=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-         <name>Rule1</name>
-         <declaration>clock t;</declaration>
-         <location id="id3" x="0" y="0">
-             <committed/>
-        </location>
-         <location id="id2" x="-150" y="0">
-             <committed/>
-        </location>
-         <location id="id0" x="-300" y="0">
-             <label kind="invariant">t&lt;=1</label>
-        </location>
-         <init ref="id0"/>
-         <transition>
-             <source ref="id3"/>
-             <target ref="id0"/>
-             <label kind="synchronisation" x="-100" y="-90">turn_ac_heat[0]!</label>
-             <nail x="0" y="-100"/>
-             <nail x="-300" y="-100"/>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id3"/>
-             <label kind="guard">temperature&lt;=10</label>
-             <label kind="assignment">rule1=1</label>
-        </transition>
-         <transition>
-             <source ref="id0"/>
-             <target ref="id2">
-                 <label kind="assignment">t=0</label>
-            </target>
-             <label kind="guard">t&gt;=1</label>
-        </transition>
-         <transition>
-             <source ref="id2"/>
-             <target ref="id0"/>
-             <label kind="guard" x="-290" y="100">temperature&gt;10</label>
-             <label kind="assignment" x="-290" y="70">rule1=0</label>
-             <nail x="-150" y="90"/>
-             <nail x="-300" y="90"/>
-        </transition>
-    </template>
-     <template>
-     
-         <name>Person</name>
-     
-         <parameter>double t0,double t1,double t2,double t3,double t4</parameter>
-     
-         <declaration>//biddable</declaration>
-     
-         <location id="id0" x="150" y="100">
-       
-             <committed/>
-    
-        </location>
-     
-         <location id="id1" x="300" y="100">
-       
-             <name>Living_room</name>
-       
-             <label kind="invariant">time&lt;=t0</label>
-    
-        </location>
-     
-         <location id="id2" x="450" y="100">
-       
-             <name>Kitchen</name>
-       
-             <label kind="invariant">time&lt;=t1</label>
-    
-        </location>
-     
-         <location id="id3" x="600" y="100">
-       
-             <name>Bathroom</name>
-       
-             <label kind="invariant">time&lt;=t2</label>
-    
-        </location>
-     
-         <location id="id4" x="750" y="100">
-       
-             <name>Bedroom</name>
-       
-             <label kind="invariant">time&lt;=t3</label>
-    
-        </location>
-     
-         <location id="id5" x="900" y="100">
-       
-             <name>Guest_room</name>
-       
-             <label kind="invariant">time&lt;=t4</label>
-    
-        </location>
-     
-         <location id="id6" x="1050" y="100">
-       
-             <name>Out</name>
-    
-        </location>
-     
-         <init ref="id0"/>
-     
-         <transition>
-       
-             <source ref="id0"/>
-       
-             <target ref="id1"/>
-       
-             <label kind="assignment">position=0</label>
-    
-        </transition>
-     
-         <transition>
-       
-             <source ref="id1"/>
-       
-             <target ref="id2"/>
-       
-             <label kind="guard">time&gt;=t0</label>
-       
-             <label kind="assignment">position=1</label>
-    
-        </transition>
-     
-         <transition>
-       
-             <source ref="id2"/>
-       
-             <target ref="id3"/>
-       
-             <label kind="guard">time&gt;=t1</label>
-       
-             <label kind="assignment">position=2</label>
-    
-        </transition>
-     
-         <transition>
-       
-             <source ref="id3"/>
-       
-             <target ref="id4"/>
-       
-             <label kind="guard">time&gt;=t2</label>
-       
-             <label kind="assignment">position=3</label>
-    
-        </transition>
-     
-         <transition>
-       
-             <source ref="id4"/>
-       
-             <target ref="id5"/>
-       
-             <label kind="guard">time&gt;=t3</label>
-       
-             <label kind="assignment">position=4</label>
-    
-        </transition>
-     
-         <transition>
-       
-             <source ref="id5"/>
-       
-             <target ref="id6"/>
-       
-             <label kind="guard">time&gt;=t4</label>
-       
-             <label kind="assignment">position=5</label>
-    
-        </transition>
-  
-    </template>
-   
-     <template>
-		 
-     
-         <name>Rain</name>
-		 
-     
-         <declaration>//biddable
+	<template>
+		<name>Rule30</name>
+		<declaration>clock t;</declaration>
+		<location id="id0" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id1" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id2" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id2"/>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id2"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_camera_on[0]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id0"/>
+			<label kind="guard" x="-135" y="-30">position!=5</label>
+			<label kind="assignment" x="-135" y="0">rule30=1</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id1"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id2"/>
+			<label kind="guard" x="-290" y="100">position==5</label>
+			<label kind="assignment" x="-290" y="70">rule30=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule29</name>
+		<declaration>clock t;</declaration>
+		<location id="id3" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id4" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id5" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id5"/>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id5"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_hum_off[0]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id3"/>
+			<label kind="guard" x="-135" y="-30">humidity&gt;75</label>
+			<label kind="assignment" x="-135" y="0">rule29=1</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id4"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+			<label kind="guard" x="-290" y="100">humidity&lt;=75</label>
+			<label kind="assignment" x="-290" y="70">rule29=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule28</name>
+		<declaration>clock t;</declaration>
+		<location id="id6" x="150" y="0">
+			<committed/>
+		</location>
+		<location id="id7" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id8" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id9" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id9"/>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id9"/>
+			<label kind="synchronisation" x="-100" y="-90">open_blind[1]!</label>
+			<nail x="150" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id6"/>
+			<label kind="synchronisation" x="15" y="-15">open_blind[0]!</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id7"/>
+			<label kind="guard" x="-135" y="-30">position!=5</label>
+			<label kind="assignment" x="-135" y="0">rule28=1</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id8"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id9"/>
+			<label kind="guard" x="-290" y="100">position==5</label>
+			<label kind="assignment" x="-290" y="70">rule28=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule27</name>
+		<declaration>clock t;</declaration>
+		<location id="id10" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id11" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id12" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id12"/>
+		<transition>
+			<source ref="id10"/>
+			<target ref="id12"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_bulb_off[4]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id10"/>
+			<label kind="guard" x="-135" y="-30">position!=4</label>
+			<label kind="assignment" x="-135" y="0">rule27=1</label>
+		</transition>
+		<transition>
+			<source ref="id12"/>
+			<target ref="id11"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id11"/>
+			<target ref="id12"/>
+			<label kind="guard" x="-290" y="100">position==4</label>
+			<label kind="assignment" x="-290" y="70">rule27=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule26</name>
+		<declaration>clock t;</declaration>
+		<location id="id13" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id14" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id15" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id15"/>
+		<transition>
+			<source ref="id13"/>
+			<target ref="id15"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_bulb_off[2]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id13"/>
+			<label kind="guard" x="-135" y="-30">position!=2</label>
+			<label kind="assignment" x="-135" y="0">rule26=1</label>
+		</transition>
+		<transition>
+			<source ref="id15"/>
+			<target ref="id14"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id14"/>
+			<target ref="id15"/>
+			<label kind="guard" x="-290" y="100">position==2</label>
+			<label kind="assignment" x="-290" y="70">rule26=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule25</name>
+		<declaration>clock t;</declaration>
+		<location id="id16" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id17" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id18" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id18"/>
+		<transition>
+			<source ref="id16"/>
+			<target ref="id18"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_bulb_off[3]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id16"/>
+			<label kind="guard" x="-135" y="-30">position!=3</label>
+			<label kind="assignment" x="-135" y="0">rule25=1</label>
+		</transition>
+		<transition>
+			<source ref="id18"/>
+			<target ref="id17"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id17"/>
+			<target ref="id18"/>
+			<label kind="guard" x="-290" y="100">position==3</label>
+			<label kind="assignment" x="-290" y="70">rule25=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule24</name>
+		<declaration>clock t;</declaration>
+		<location id="id19" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id20" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id21" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id21"/>
+		<transition>
+			<source ref="id19"/>
+			<target ref="id21"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_bulb_off[1]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id19"/>
+			<label kind="guard" x="-135" y="-30">position!=1</label>
+			<label kind="assignment" x="-135" y="0">rule24=1</label>
+		</transition>
+		<transition>
+			<source ref="id21"/>
+			<target ref="id20"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id20"/>
+			<target ref="id21"/>
+			<label kind="guard" x="-290" y="100">position==1</label>
+			<label kind="assignment" x="-290" y="70">rule24=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule23</name>
+		<declaration>clock t;</declaration>
+		<location id="id22" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id23" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id24" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id24"/>
+		<transition>
+			<source ref="id22"/>
+			<target ref="id24"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_tv_off[0]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id22"/>
+			<label kind="guard" x="-135" y="-30">position!=0</label>
+			<label kind="assignment" x="-135" y="0">rule23=1</label>
+		</transition>
+		<transition>
+			<source ref="id24"/>
+			<target ref="id23"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id23"/>
+			<target ref="id24"/>
+			<label kind="guard" x="-290" y="100">position==0</label>
+			<label kind="assignment" x="-290" y="70">rule23=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule22</name>
+		<declaration>clock t;</declaration>
+		<location id="id25" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id26" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id27" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id27"/>
+		<transition>
+			<source ref="id25"/>
+			<target ref="id27"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_bulb_off[0]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id25"/>
+			<label kind="guard" x="-135" y="-30">position!=0</label>
+			<label kind="assignment" x="-135" y="0">rule22=1</label>
+		</transition>
+		<transition>
+			<source ref="id27"/>
+			<target ref="id26"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id26"/>
+			<target ref="id27"/>
+			<label kind="guard" x="-290" y="100">position==0</label>
+			<label kind="assignment" x="-290" y="70">rule22=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule21</name>
+		<declaration>clock t;</declaration>
+		<location id="id28" x="150" y="0">
+			<committed/>
+		</location>
+		<location id="id29" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id30" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id31" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id31"/>
+		<transition>
+			<source ref="id28"/>
+			<target ref="id31"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_ap_off[0]!</label>
+			<nail x="150" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id28"/>
+			<label kind="guard" x="15" y="-30">pm_2_5&lt;20</label>
+			<label kind="assignment" x="15" y="0">rule21=1</label>
+		</transition>
+		<transition>
+			<source ref="id29"/>
+			<target ref="id31"/>
+			<label kind="guard" x="-290" y="190">pm_2_5&gt;=20</label>
+			<label kind="assignment" x="-290" y="160">rule21=0</label>
+			<nail x="0" y="180"/>
+			<nail x="-300" y="180"/>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id29"/>
+			<label kind="guard" x="-135" y="-30">co2ppm&lt;400</label>
+		</transition>
+		<transition>
+			<source ref="id31"/>
+			<target ref="id30"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id30"/>
+			<target ref="id31"/>
+			<label kind="guard" x="-290" y="100">co2ppm&gt;=400</label>
+			<label kind="assignment" x="-290" y="70">rule21=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule20</name>
+		<declaration>clock t;</declaration>
+		<location id="id32" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id33" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id34" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id34"/>
+		<transition>
+			<source ref="id32"/>
+			<target ref="id34"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_ap_on[0]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id32"/>
+			<label kind="guard" x="-135" y="-30">pm_2_5&gt;75</label>
+			<label kind="assignment" x="-135" y="0">rule20=1</label>
+		</transition>
+		<transition>
+			<source ref="id34"/>
+			<target ref="id33"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id33"/>
+			<target ref="id34"/>
+			<label kind="guard" x="-290" y="100">pm_2_5&lt;=75</label>
+			<label kind="assignment" x="-290" y="70">rule20=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule19</name>
+		<declaration>clock t;</declaration>
+		<location id="id35" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id36" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id37" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id37"/>
+		<transition>
+			<source ref="id35"/>
+			<target ref="id37"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_ap_on[0]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id35"/>
+			<label kind="guard" x="-135" y="-30">co2ppm&gt;800</label>
+			<label kind="assignment" x="-135" y="0">rule19=1</label>
+		</transition>
+		<transition>
+			<source ref="id37"/>
+			<target ref="id36"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id36"/>
+			<target ref="id37"/>
+			<label kind="guard" x="-290" y="100">co2ppm&lt;=800</label>
+			<label kind="assignment" x="-290" y="70">rule19=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule18</name>
+		<declaration>clock t;</declaration>
+		<location id="id38" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id39" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id40" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id40"/>
+		<transition>
+			<source ref="id38"/>
+			<target ref="id40"/>
+			<label kind="synchronisation" x="-100" y="-90">open_window[1]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id38"/>
+			<label kind="guard" x="-135" y="-30">co2ppm&gt;1100</label>
+			<label kind="assignment" x="-135" y="0">rule18=1</label>
+		</transition>
+		<transition>
+			<source ref="id40"/>
+			<target ref="id39"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id39"/>
+			<target ref="id40"/>
+			<label kind="guard" x="-290" y="100">co2ppm&lt;=1100</label>
+			<label kind="assignment" x="-290" y="70">rule18=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule17</name>
+		<declaration>clock t;</declaration>
+		<location id="id41" x="150" y="0">
+			<committed/>
+		</location>
+		<location id="id42" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id43" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id44" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id44"/>
+		<transition>
+			<source ref="id41"/>
+			<target ref="id44"/>
+			<label kind="synchronisation" x="-100" y="-90">close_window[2]!</label>
+			<nail x="150" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id41"/>
+			<label kind="synchronisation" x="15" y="-15">close_window[1]!</label>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id42"/>
+			<label kind="guard" x="-135" y="-30">airConditioner[0]==2</label>
+			<label kind="assignment" x="-135" y="0">rule17=1</label>
+		</transition>
+		<transition>
+			<source ref="id44"/>
+			<target ref="id43"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id43"/>
+			<target ref="id44"/>
+			<label kind="guard" x="-290" y="100">airConditioner[0]!=2</label>
+			<label kind="assignment" x="-290" y="70">rule17=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule16</name>
+		<declaration>clock t;</declaration>
+		<location id="id45" x="150" y="0">
+			<committed/>
+		</location>
+		<location id="id46" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id47" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id48" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id48"/>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id48"/>
+			<label kind="synchronisation" x="-100" y="-90">close_window[2]!</label>
+			<nail x="150" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="15" y="-15">close_window[1]!</label>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id46"/>
+			<label kind="guard" x="-135" y="-30">airConditioner[0]==1</label>
+			<label kind="assignment" x="-135" y="0">rule16=1</label>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id47"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id48"/>
+			<label kind="guard" x="-290" y="100">airConditioner[0]!=1</label>
+			<label kind="assignment" x="-290" y="70">rule16=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule15</name>
+		<declaration>clock t;</declaration>
+		<location id="id49" x="150" y="0">
+			<committed/>
+		</location>
+		<location id="id50" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id51" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id52" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id52"/>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id52"/>
+			<label kind="synchronisation" x="-100" y="-90">close_window[3]!</label>
+			<nail x="150" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id49"/>
+			<label kind="synchronisation" x="15" y="-15">close_window[2]!</label>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id50"/>
+			<label kind="guard" x="-135" y="-30">rain==1</label>
+			<label kind="assignment" x="-135" y="0">rule15=1</label>
+		</transition>
+		<transition>
+			<source ref="id52"/>
+			<target ref="id51"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id51"/>
+			<target ref="id52"/>
+			<label kind="guard" x="-290" y="100">rain!=1</label>
+			<label kind="assignment" x="-290" y="70">rule15=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule14</name>
+		<declaration>clock t;</declaration>
+		<location id="id53" x="150" y="0">
+			<committed/>
+		</location>
+		<location id="id54" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id55" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id56" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id56"/>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id56"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_hum_off[0]!</label>
+			<nail x="150" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id54"/>
+			<target ref="id53"/>
+			<label kind="synchronisation" x="15" y="-15">turn_ac_off[0]!</label>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id54"/>
+			<label kind="guard" x="-135" y="-30">position==5</label>
+			<label kind="assignment" x="-135" y="0">rule14=1</label>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id55"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id56"/>
+			<label kind="guard" x="-290" y="100">position!=5</label>
+			<label kind="assignment" x="-290" y="70">rule14=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule13</name>
+		<declaration>clock t;</declaration>
+		<location id="id57" x="150" y="0">
+			<committed/>
+		</location>
+		<location id="id58" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id59" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id60" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id60"/>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id60"/>
+			<label kind="synchronisation" x="-100" y="-90">close_blind[1]!</label>
+			<nail x="150" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id58"/>
+			<target ref="id57"/>
+			<label kind="synchronisation" x="15" y="-15">close_blind[0]!</label>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id58"/>
+			<label kind="guard" x="-135" y="-30">position==5</label>
+			<label kind="assignment" x="-135" y="0">rule13=1</label>
+		</transition>
+		<transition>
+			<source ref="id60"/>
+			<target ref="id59"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id60"/>
+			<label kind="guard" x="-290" y="100">position!=5</label>
+			<label kind="assignment" x="-290" y="70">rule13=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule12</name>
+		<declaration>clock t;</declaration>
+		<location id="id61" x="450" y="0">
+			<committed/>
+		</location>
+		<location id="id62" x="300" y="0">
+			<committed/>
+		</location>
+		<location id="id63" x="150" y="0">
+			<committed/>
+		</location>
+		<location id="id64" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id65" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id66" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id66"/>
+		<transition>
+			<source ref="id61"/>
+			<target ref="id66"/>
+			<label kind="synchronisation" x="-100" y="-90">close_window[0]!</label>
+			<nail x="450" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id61"/>
+			<label kind="synchronisation" x="315" y="-15">close_window[3]!</label>
+		</transition>
+		<transition>
+			<source ref="id63"/>
+			<target ref="id62"/>
+			<label kind="synchronisation" x="165" y="-15">close_window[2]!</label>
+		</transition>
+		<transition>
+			<source ref="id64"/>
+			<target ref="id63"/>
+			<label kind="synchronisation" x="15" y="-15">close_window[1]!</label>
+		</transition>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id64"/>
+			<label kind="guard" x="-135" y="-30">position==5</label>
+			<label kind="assignment" x="-135" y="0">rule12=1</label>
+		</transition>
+		<transition>
+			<source ref="id66"/>
+			<target ref="id65"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id65"/>
+			<target ref="id66"/>
+			<label kind="guard" x="-290" y="100">position!=5</label>
+			<label kind="assignment" x="-290" y="70">rule12=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule11</name>
+		<declaration>clock t;</declaration>
+		<location id="id67" x="600" y="0">
+			<committed/>
+		</location>
+		<location id="id68" x="450" y="0">
+			<committed/>
+		</location>
+		<location id="id69" x="300" y="0">
+			<committed/>
+		</location>
+		<location id="id70" x="150" y="0">
+			<committed/>
+		</location>
+		<location id="id71" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id72" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id73" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id73"/>
+		<transition>
+			<source ref="id67"/>
+			<target ref="id73"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_bulb_off[4]!</label>
+			<nail x="600" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id68"/>
+			<target ref="id67"/>
+			<label kind="synchronisation" x="465" y="-15">turn_bulb_off[3]!</label>
+		</transition>
+		<transition>
+			<source ref="id69"/>
+			<target ref="id68"/>
+			<label kind="synchronisation" x="315" y="-15">turn_bulb_off[2]!</label>
+		</transition>
+		<transition>
+			<source ref="id70"/>
+			<target ref="id69"/>
+			<label kind="synchronisation" x="165" y="-15">turn_bulb_off[1]!</label>
+		</transition>
+		<transition>
+			<source ref="id71"/>
+			<target ref="id70"/>
+			<label kind="synchronisation" x="15" y="-15">turn_bulb_off[0]!</label>
+		</transition>
+		<transition>
+			<source ref="id72"/>
+			<target ref="id71"/>
+			<label kind="guard" x="-135" y="-30">position==5</label>
+			<label kind="assignment" x="-135" y="0">rule11=1</label>
+		</transition>
+		<transition>
+			<source ref="id73"/>
+			<target ref="id72"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id72"/>
+			<target ref="id73"/>
+			<label kind="guard" x="-290" y="100">position!=5</label>
+			<label kind="assignment" x="-290" y="70">rule11=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule10</name>
+		<declaration>clock t;</declaration>
+		<location id="id74" x="150" y="0">
+			<committed/>
+		</location>
+		<location id="id75" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id76" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id77" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id77"/>
+		<transition>
+			<source ref="id74"/>
+			<target ref="id77"/>
+			<label kind="synchronisation" x="-100" y="-90">open_window[0]!</label>
+			<nail x="150" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id75"/>
+			<target ref="id74"/>
+			<label kind="synchronisation" x="15" y="-15">turn_bulb_on[4]!</label>
+		</transition>
+		<transition>
+			<source ref="id76"/>
+			<target ref="id75"/>
+			<label kind="guard" x="-135" y="-30">position==4</label>
+			<label kind="assignment" x="-135" y="0">rule10=1</label>
+		</transition>
+		<transition>
+			<source ref="id77"/>
+			<target ref="id76"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id76"/>
+			<target ref="id77"/>
+			<label kind="guard" x="-290" y="100">position!=4</label>
+			<label kind="assignment" x="-290" y="70">rule10=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule9</name>
+		<declaration>clock t;</declaration>
+		<location id="id78" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id79" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id80" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id80"/>
+		<transition>
+			<source ref="id78"/>
+			<target ref="id80"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_bulb_on[2]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id79"/>
+			<target ref="id78"/>
+			<label kind="guard" x="-135" y="-30">position==2</label>
+			<label kind="assignment" x="-135" y="0">rule9=1</label>
+		</transition>
+		<transition>
+			<source ref="id80"/>
+			<target ref="id79"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id79"/>
+			<target ref="id80"/>
+			<label kind="guard" x="-290" y="100">position!=2</label>
+			<label kind="assignment" x="-290" y="70">rule9=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule8</name>
+		<declaration>clock t;</declaration>
+		<location id="id81" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id82" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id83" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id83"/>
+		<transition>
+			<source ref="id81"/>
+			<target ref="id83"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_bulb_on[3]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id82"/>
+			<target ref="id81"/>
+			<label kind="guard" x="-135" y="-30">position==3</label>
+			<label kind="assignment" x="-135" y="0">rule8=1</label>
+		</transition>
+		<transition>
+			<source ref="id83"/>
+			<target ref="id82"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id82"/>
+			<target ref="id83"/>
+			<label kind="guard" x="-290" y="100">position!=3</label>
+			<label kind="assignment" x="-290" y="70">rule8=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule7</name>
+		<declaration>clock t;</declaration>
+		<location id="id84" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id85" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id86" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id86"/>
+		<transition>
+			<source ref="id84"/>
+			<target ref="id86"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_bulb_on[1]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id85"/>
+			<target ref="id84"/>
+			<label kind="guard" x="-135" y="-30">position==1</label>
+			<label kind="assignment" x="-135" y="0">rule7=1</label>
+		</transition>
+		<transition>
+			<source ref="id86"/>
+			<target ref="id85"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id85"/>
+			<target ref="id86"/>
+			<label kind="guard" x="-290" y="100">position!=1</label>
+			<label kind="assignment" x="-290" y="70">rule7=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule6</name>
+		<declaration>clock t;</declaration>
+		<location id="id87" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id88" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id89" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id89"/>
+		<transition>
+			<source ref="id87"/>
+			<target ref="id89"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_bulb_on[0]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id88"/>
+			<target ref="id87"/>
+			<label kind="guard" x="-135" y="-30">tV[0]==1</label>
+			<label kind="assignment" x="-135" y="0">rule6=1</label>
+		</transition>
+		<transition>
+			<source ref="id89"/>
+			<target ref="id88"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id88"/>
+			<target ref="id89"/>
+			<label kind="guard" x="-290" y="100">tV[0]!=1</label>
+			<label kind="assignment" x="-290" y="70">rule6=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule5</name>
+		<declaration>clock t;</declaration>
+		<location id="id90" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id91" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id92" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id92"/>
+		<transition>
+			<source ref="id90"/>
+			<target ref="id92"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_tv_on[0]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id91"/>
+			<target ref="id90"/>
+			<label kind="guard" x="-135" y="-30">position==0</label>
+			<label kind="assignment" x="-135" y="0">rule5=1</label>
+		</transition>
+		<transition>
+			<source ref="id92"/>
+			<target ref="id91"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id91"/>
+			<target ref="id92"/>
+			<label kind="guard" x="-290" y="100">position!=0</label>
+			<label kind="assignment" x="-290" y="70">rule5=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule4</name>
+		<declaration>clock t;</declaration>
+		<location id="id93" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id94" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id95" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id95"/>
+		<transition>
+			<source ref="id93"/>
+			<target ref="id95"/>
+			<label kind="synchronisation" x="-100" y="-90">open_window[2]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id94"/>
+			<target ref="id93"/>
+			<label kind="guard" x="-135" y="-30">position==0</label>
+			<label kind="assignment" x="-135" y="0">rule4=1</label>
+		</transition>
+		<transition>
+			<source ref="id95"/>
+			<target ref="id94"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id94"/>
+			<target ref="id95"/>
+			<label kind="guard" x="-290" y="100">position!=0</label>
+			<label kind="assignment" x="-290" y="70">rule4=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule3</name>
+		<declaration>clock t;</declaration>
+		<location id="id96" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id97" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id98" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id98"/>
+		<transition>
+			<source ref="id96"/>
+			<target ref="id98"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_hum_on[0]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id97"/>
+			<target ref="id96"/>
+			<label kind="guard" x="-135" y="-30">humidity&lt;20</label>
+			<label kind="assignment" x="-135" y="0">rule3=1</label>
+		</transition>
+		<transition>
+			<source ref="id98"/>
+			<target ref="id97"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id97"/>
+			<target ref="id98"/>
+			<label kind="guard" x="-290" y="100">humidity&gt;=20</label>
+			<label kind="assignment" x="-290" y="70">rule3=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule2</name>
+		<declaration>clock t;</declaration>
+		<location id="id99" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id100" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id101" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id101"/>
+		<transition>
+			<source ref="id99"/>
+			<target ref="id101"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_ac_cool[0]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id100"/>
+			<target ref="id99"/>
+			<label kind="guard" x="-135" y="-30">temperature&gt;=28</label>
+			<label kind="assignment" x="-135" y="0">rule2=1</label>
+		</transition>
+		<transition>
+			<source ref="id101"/>
+			<target ref="id100"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id100"/>
+			<target ref="id101"/>
+			<label kind="guard" x="-290" y="100">temperature&lt;28</label>
+			<label kind="assignment" x="-290" y="70">rule2=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Rule1</name>
+		<declaration>clock t;</declaration>
+		<location id="id102" x="0" y="0">
+			<committed/>
+		</location>
+		<location id="id103" x="-150" y="0">
+			<committed/>
+		</location>
+		<location id="id104" x="-300" y="0">
+			<label kind="invariant" x="-310" y="15">t&lt;=1</label>
+		</location>
+		<init ref="id104"/>
+		<transition>
+			<source ref="id102"/>
+			<target ref="id104"/>
+			<label kind="synchronisation" x="-100" y="-90">turn_ac_heat[0]!</label>
+			<nail x="0" y="-100"/>
+			<nail x="-300" y="-100"/>
+		</transition>
+		<transition>
+			<source ref="id103"/>
+			<target ref="id102"/>
+			<label kind="guard" x="-135" y="-30">temperature&lt;=10</label>
+			<label kind="assignment" x="-135" y="0">rule1=1</label>
+		</transition>
+		<transition>
+			<source ref="id104"/>
+			<target ref="id103"/>
+			<label kind="guard" x="-285" y="-30">t&gt;=1</label>
+			<label kind="assignment" x="-285" y="0">t=0</label>
+		</transition>
+		<transition>
+			<source ref="id103"/>
+			<target ref="id104"/>
+			<label kind="guard" x="-290" y="100">temperature&gt;10</label>
+			<label kind="assignment" x="-290" y="70">rule1=0</label>
+			<nail x="-150" y="90"/>
+			<nail x="-300" y="90"/>
+		</transition>
+	</template>
+	<template>
+		<name>Person</name>
+		<parameter>double t0,double t1,double t2,double t3,double t4</parameter>
+		<declaration>//biddable</declaration>
+		<location id="id105" x="150" y="100">
+			<committed/>
+		</location>
+		<location id="id106" x="300" y="100">
+			<name x="290" y="70">Living_room</name>
+			<label kind="invariant" x="290" y="115">time&lt;=t0</label>
+		</location>
+		<location id="id107" x="450" y="100">
+			<name x="440" y="70">Kitchen</name>
+			<label kind="invariant" x="440" y="115">time&lt;=t1</label>
+		</location>
+		<location id="id108" x="600" y="100">
+			<name x="590" y="70">Bathroom</name>
+			<label kind="invariant" x="590" y="115">time&lt;=t2</label>
+		</location>
+		<location id="id109" x="750" y="100">
+			<name x="740" y="70">Bedroom</name>
+			<label kind="invariant" x="740" y="115">time&lt;=t3</label>
+		</location>
+		<location id="id110" x="900" y="100">
+			<name x="890" y="70">Guest_room</name>
+			<label kind="invariant" x="890" y="115">time&lt;=t4</label>
+		</location>
+		<location id="id111" x="1050" y="100">
+			<name x="1040" y="70">Out</name>
+		</location>
+		<init ref="id105"/>
+		<transition>
+			<source ref="id105"/>
+			<target ref="id106"/>
+			<label kind="assignment" x="165" y="100">position=0</label>
+		</transition>
+		<transition>
+			<source ref="id106"/>
+			<target ref="id107"/>
+			<label kind="guard" x="315" y="70">time&gt;=t0</label>
+			<label kind="assignment" x="315" y="100">position=1</label>
+		</transition>
+		<transition>
+			<source ref="id107"/>
+			<target ref="id108"/>
+			<label kind="guard" x="465" y="70">time&gt;=t1</label>
+			<label kind="assignment" x="465" y="100">position=2</label>
+		</transition>
+		<transition>
+			<source ref="id108"/>
+			<target ref="id109"/>
+			<label kind="guard" x="615" y="70">time&gt;=t2</label>
+			<label kind="assignment" x="615" y="100">position=3</label>
+		</transition>
+		<transition>
+			<source ref="id109"/>
+			<target ref="id110"/>
+			<label kind="guard" x="765" y="70">time&gt;=t3</label>
+			<label kind="assignment" x="765" y="100">position=4</label>
+		</transition>
+		<transition>
+			<source ref="id110"/>
+			<target ref="id111"/>
+			<label kind="guard" x="915" y="70">time&gt;=t4</label>
+			<label kind="assignment" x="915" y="100">position=5</label>
+		</transition>
+	</template>
+	<template>
+		<name>Rain</name>
+		<declaration>//biddable
 clock t;</declaration>
-		 
-     
-         <location id="id3" x="-119" y="-17">
-			 
-       
-             <committed/>
-		
-    
-        </location>
-		 
-     
-         <location id="id4" x="-229" y="-17">
-			 
-       
-             <name x="-255" y="-42">notRain</name>
-			 
-       
-             <label kind="invariant" x="-263" y="-9">t&lt;=30</label>
-		
-    
-        </location>
-		 
-     
-         <location id="id5" x="-17" y="-17">
-			 
-       
-             <name x="-34" y="-42">isRain</name>
-			 
-       
-             <label kind="invariant" x="-17" y="-9">t&lt;=30</label>
-		
-    
-        </location>
-		 
-     
-         <branchpoint id="id6" x="-17" y="51">
+		<location id="id112" x="-119" y="-17">
+			<committed/>
+		</location>
+		<location id="id113" x="-229" y="-17">
+			<name x="-255" y="-42">notRain</name>
+			<label kind="invariant" x="-263" y="-9">t&lt;=30</label>
+		</location>
+		<location id="id114" x="-17" y="-17">
+			<name x="-34" y="-42">isRain</name>
+			<label kind="invariant" x="-17" y="-9">t&lt;=30</label>
+		</location>
+		<branchpoint id="id115" x="-17" y="51">
 		</branchpoint>
-		 
-     
-         <branchpoint id="id7" x="-229" y="51">
+		<branchpoint id="id116" x="-229" y="51">
 		</branchpoint>
-		 
-     
-         <init ref="id3"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id6"/>
-			 
-       
-             <target ref="id5"/>
-			 
-       
-             <label kind="assignment" x="-26" y="25">rain=1,t=0</label>
-			 
-       
-             <label kind="probability" x="0" y="34">2</label>
-			 
-       
-             <nail x="42" y="-17"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id6"/>
-			 
-       
-             <target ref="id4"/>
-			 
-       
-             <label kind="assignment" x="-102" y="17">rain=0,t=0</label>
-			 
-       
-             <label kind="probability" x="-51" y="34">8</label>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id5"/>
-			 
-       
-             <target ref="id6"/>
-			 
-       
-             <label kind="guard" x="-17" y="8">t&gt;=30</label>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id3"/>
-			 
-       
-             <target ref="id4"/>
-			 
-       
-             <label kind="assignment" x="-204" y="-34">rain=0,t=0</label>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id7"/>
-			 
-       
-             <target ref="id5"/>
-			 
-       
-             <label kind="assignment" x="-204" y="17">rain=1,t=0</label>
-			 
-       
-             <label kind="probability" x="-204" y="34">2</label>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id7"/>
-			 
-       
-             <target ref="id4"/>
-			 
-       
-             <label kind="assignment" x="-280" y="25">rain=0,t=0</label>
-			 
-       
-             <label kind="probability" x="-255" y="34">8</label>
-			 
-       
-             <nail x="-289" y="-17"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id4"/>
-			 
-       
-             <target ref="id7"/>
-			 
-       
-             <label kind="guard" x="-263" y="8">t&gt;=30</label>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>TV</name>
-		 
-     
-         <parameter>int i</parameter>
-		 
-     
-         <declaration>//controlled_device</declaration>
-		 
-     
-         <location id="id8" x="0" y="0">
-			 
-       
-             <name x="17" y="-17">tvoff</name>
-		
-    
-        </location>
-		 
-     
-         <location id="id9" x="0" y="76">
-			 
-       
-             <name x="17" y="67">tvon</name>
-		
-    
-        </location>
-		 
-     
-         <init ref="id8"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id9"/>
-			 
-       
-             <target ref="id8"/>
-			 
-       
-             <label kind="synchronisation" x="17" y="25">turn_tv_off[i]?</label>
-			 
-       
-             <label kind="assignment" x="34" y="42">tV[i]=0</label>
-			 
-       
-             <nail x="59" y="42"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id8"/>
-			 
-       
-             <target ref="id9"/>
-			 
-       
-             <label kind="synchronisation" x="-68" y="42">turn_tv_on[i]?</label>
-			 
-       
-             <label kind="assignment" x="-68" y="25">tV[i]=1</label>
-			 
-       
-             <nail x="-59" y="42"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>Bulb</name>
-		 
-     
-         <parameter>int i</parameter>
-		 
-     
-         <declaration>//controlled_device</declaration>
-		 
-     
-         <location id="id10" x="0" y="34">
-			 
-       
-             <name x="-42" y="25">boff</name>
-		
-    
-        </location>
-		 
-     
-         <location id="id11" x="0" y="136">
-			 
-       
-             <name x="17" y="127">bon</name>
-		
-    
-        </location>
-		 
-     
-         <init ref="id10"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id11"/>
-			 
-       
-             <target ref="id10"/>
-			 
-       
-             <label kind="synchronisation" x="-59" y="42">turn_bulb_off[i]?</label>
-			 
-       
-             <label kind="assignment" x="-59" y="59">bulb[i]=0</label>
-			 
-       
-             <nail x="-59" y="85"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id10"/>
-			 
-       
-             <target ref="id11"/>
-			 
-       
-             <label kind="synchronisation" x="-34" y="102">turn_bulb_on[i]?</label>
-			 
-       
-             <label kind="assignment" x="8" y="85">bulb[i]=1</label>
-			 
-       
-             <nail x="59" y="85"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>Blind</name>
-		 
-     
-         <parameter>int i</parameter>
-		 
-     
-         <declaration>//controlled_device</declaration>
-		 
-     
-         <location id="id12" x="0" y="0">
-			 
-       
-             <name x="-10" y="-34">bclosed</name>
-		
-    
-        </location>
-		 
-     
-         <location id="id13" x="0" y="153">
-			 
-       
-             <name x="-10" y="119">bopen</name>
-		
-    
-        </location>
-		 
-     
-         <init ref="id12"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id13"/>
-			 
-       
-             <target ref="id12"/>
-			 
-       
-             <label kind="synchronisation" x="59" y="59">close_blind[i]?</label>
-			 
-       
-             <label kind="assignment" x="59" y="76">blind[i]=0</label>
-			 
-       
-             <nail x="93" y="85"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id12"/>
-			 
-       
-             <target ref="id13"/>
-			 
-       
-             <label kind="synchronisation" x="-136" y="59">open_blind[i]?</label>
-			 
-       
-             <label kind="assignment" x="-136" y="76">blind[i]=1</label>
-			 
-       
-             <nail x="-93" y="76"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>Window</name>
-		 
-     
-         <parameter>int i</parameter>
-		 
-     
-         <declaration>//controlled_device</declaration>
-		 
-     
-         <location id="id14" x="0" y="25">
-			 
-       
-             <name x="17" y="16">wopen</name>
-		
-    
-        </location>
-		 
-     
-         <location id="id15" x="0" y="127">
-			 
-       
-             <name x="-59" y="119">wclosed</name>
-		
-    
-        </location>
-		 
-     
-         <init ref="id15"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id15"/>
-			 
-       
-             <target ref="id14"/>
-			 
-       
-             <label kind="synchronisation" x="-42" y="51">open_window[i]?</label>
-			 
-       
-             <label kind="assignment" x="-17" y="34">window[i]=1</label>
-			 
-       
-             <nail x="59" y="76"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id14"/>
-			 
-       
-             <target ref="id15"/>
-			 
-       
-             <label kind="synchronisation" x="-59" y="76">close_window[i]?</label>
-			 
-       
-             <label kind="assignment" x="-59" y="93">window[i]=0</label>
-			 
-       
-             <nail x="-59" y="76"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>AirPurifier</name>
-		 
-     
-         <parameter>int i</parameter>
-		 
-     
-         <declaration>//controlled_device
+		<init ref="id112"/>
+		<transition>
+			<source ref="id115"/>
+			<target ref="id114"/>
+			<label kind="assignment" x="-26" y="25">rain=1,t=0</label>
+			<label kind="probability" x="0" y="34">2</label>
+			<nail x="42" y="-17"/>
+		</transition>
+		<transition>
+			<source ref="id115"/>
+			<target ref="id113"/>
+			<label kind="assignment" x="-102" y="17">rain=0,t=0</label>
+			<label kind="probability" x="-51" y="34">8</label>
+		</transition>
+		<transition>
+			<source ref="id114"/>
+			<target ref="id115"/>
+			<label kind="guard" x="-17" y="8">t&gt;=30</label>
+		</transition>
+		<transition>
+			<source ref="id112"/>
+			<target ref="id113"/>
+			<label kind="assignment" x="-204" y="-34">rain=0,t=0</label>
+		</transition>
+		<transition>
+			<source ref="id116"/>
+			<target ref="id114"/>
+			<label kind="assignment" x="-204" y="17">rain=1,t=0</label>
+			<label kind="probability" x="-204" y="34">2</label>
+		</transition>
+		<transition>
+			<source ref="id116"/>
+			<target ref="id113"/>
+			<label kind="assignment" x="-280" y="25">rain=0,t=0</label>
+			<label kind="probability" x="-255" y="34">8</label>
+			<nail x="-289" y="-17"/>
+		</transition>
+		<transition>
+			<source ref="id113"/>
+			<target ref="id116"/>
+			<label kind="guard" x="-263" y="8">t&gt;=30</label>
+		</transition>
+	</template>
+	<template>
+		<name>TV</name>
+		<parameter>int i</parameter>
+		<declaration>//controlled_device</declaration>
+		<location id="id117" x="0" y="0">
+			<name x="17" y="-17">tvoff</name>
+		</location>
+		<location id="id118" x="0" y="76">
+			<name x="17" y="67">tvon</name>
+		</location>
+		<init ref="id117"/>
+		<transition>
+			<source ref="id118"/>
+			<target ref="id117"/>
+			<label kind="synchronisation" x="17" y="25">turn_tv_off[i]?</label>
+			<label kind="assignment" x="34" y="42">tV[i]=0</label>
+			<nail x="59" y="42"/>
+		</transition>
+		<transition>
+			<source ref="id117"/>
+			<target ref="id118"/>
+			<label kind="synchronisation" x="-68" y="42">turn_tv_on[i]?</label>
+			<label kind="assignment" x="-68" y="25">tV[i]=1</label>
+			<nail x="-59" y="42"/>
+		</transition>
+	</template>
+	<template>
+		<name>Bulb</name>
+		<parameter>int i</parameter>
+		<declaration>//controlled_device</declaration>
+		<location id="id119" x="0" y="34">
+			<name x="-42" y="25">boff</name>
+		</location>
+		<location id="id120" x="0" y="136">
+			<name x="17" y="127">bon</name>
+		</location>
+		<init ref="id119"/>
+		<transition>
+			<source ref="id120"/>
+			<target ref="id119"/>
+			<label kind="synchronisation" x="-59" y="42">turn_bulb_off[i]?</label>
+			<label kind="assignment" x="-59" y="59">bulb[i]=0</label>
+			<nail x="-59" y="85"/>
+		</transition>
+		<transition>
+			<source ref="id119"/>
+			<target ref="id120"/>
+			<label kind="synchronisation" x="-34" y="102">turn_bulb_on[i]?</label>
+			<label kind="assignment" x="8" y="85">bulb[i]=1</label>
+			<nail x="59" y="85"/>
+		</transition>
+	</template>
+	<template>
+		<name>Blind</name>
+		<parameter>int i</parameter>
+		<declaration>//controlled_device</declaration>
+		<location id="id121" x="0" y="0">
+			<name x="-10" y="-34">bclosed</name>
+		</location>
+		<location id="id122" x="0" y="153">
+			<name x="-10" y="119">bopen</name>
+		</location>
+		<init ref="id121"/>
+		<transition>
+			<source ref="id122"/>
+			<target ref="id121"/>
+			<label kind="synchronisation" x="59" y="59">close_blind[i]?</label>
+			<label kind="assignment" x="59" y="76">blind[i]=0</label>
+			<nail x="93" y="85"/>
+		</transition>
+		<transition>
+			<source ref="id121"/>
+			<target ref="id122"/>
+			<label kind="synchronisation" x="-136" y="59">open_blind[i]?</label>
+			<label kind="assignment" x="-136" y="76">blind[i]=1</label>
+			<nail x="-93" y="76"/>
+		</transition>
+	</template>
+	<template>
+		<name>Window</name>
+		<parameter>int i</parameter>
+		<declaration>//controlled_device</declaration>
+		<location id="id123" x="0" y="25">
+			<name x="17" y="16">wopen</name>
+		</location>
+		<location id="id124" x="0" y="127">
+			<name x="-59" y="119">wclosed</name>
+		</location>
+		<init ref="id124"/>
+		<transition>
+			<source ref="id124"/>
+			<target ref="id123"/>
+			<label kind="synchronisation" x="-42" y="51">open_window[i]?</label>
+			<label kind="assignment" x="-17" y="34">window[i]=1</label>
+			<nail x="59" y="76"/>
+		</transition>
+		<transition>
+			<source ref="id123"/>
+			<target ref="id124"/>
+			<label kind="synchronisation" x="-59" y="76">close_window[i]?</label>
+			<label kind="assignment" x="-59" y="93">window[i]=0</label>
+			<nail x="-59" y="76"/>
+		</transition>
+	</template>
+	<template>
+		<name>AirPurifier</name>
+		<parameter>int i</parameter>
+		<declaration>//controlled_device
 double ondpm=-0.5;
 double ondco2=-5.0;
 double offdpm=0.0;
 double offdco2=0.0;</declaration>
-		 
-     
-         <location id="id16" x="-68" y="-76">
-			 
-       
-             <name x="-78" y="-110">apoff</name>
-			 
-       
-             <label kind="invariant" x="-85" y="-93">pm_2_5'==0.0&amp;&amp;
+		<location id="id125" x="-68" y="-76">
+			<name x="-78" y="-110">apoff</name>
+			<label kind="invariant" x="-85" y="-93">pm_2_5'==0.0&amp;&amp;
 co2ppm'==0.0</label>
-		
-    
-        </location>
-		 
-     
-         <location id="id17" x="-68" y="76">
-			 
-       
-             <name x="-78" y="42">apon</name>
-			 
-       
-             <label kind="invariant" x="-78" y="93">pm_2_5'==-0.5&amp;&amp;
+		</location>
+		<location id="id126" x="-68" y="76">
+			<name x="-78" y="42">apon</name>
+			<label kind="invariant" x="-78" y="93">pm_2_5'==-0.5&amp;&amp;
 co2ppm'==-5.0</label>
-		
-    
-        </location>
-		 
-     
-         <init ref="id16"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id17"/>
-			 
-       
-             <target ref="id16"/>
-			 
-       
-             <label kind="synchronisation" x="-42" y="-42">turn_ap_off[i]?</label>
-			 
-       
-             <label kind="assignment" x="-34" y="-17">airPurifier[i]=0</label>
-			 
-       
-             <nail x="17" y="0"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id16"/>
-			 
-       
-             <target ref="id17"/>
-			 
-       
-             <label kind="synchronisation" x="-187" y="-42">turn_ap_on[i]?</label>
-			 
-       
-             <label kind="assignment" x="-187" y="-8">airPurifier[i]=1</label>
-			 
-       
-             <nail x="-153" y="0"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>Humidifier</name>
-		 
-     
-         <parameter>int i</parameter>
-		 
-     
-         <declaration>//controlled_device
+		</location>
+		<init ref="id125"/>
+		<transition>
+			<source ref="id126"/>
+			<target ref="id125"/>
+			<label kind="synchronisation" x="-42" y="-42">turn_ap_off[i]?</label>
+			<label kind="assignment" x="-34" y="-17">airPurifier[i]=0</label>
+			<nail x="17" y="0"/>
+		</transition>
+		<transition>
+			<source ref="id125"/>
+			<target ref="id126"/>
+			<label kind="synchronisation" x="-187" y="-42">turn_ap_on[i]?</label>
+			<label kind="assignment" x="-187" y="-8">airPurifier[i]=1</label>
+			<nail x="-153" y="0"/>
+		</transition>
+	</template>
+	<template>
+		<name>Humidifier</name>
+		<parameter>int i</parameter>
+		<declaration>//controlled_device
 double ondh=0.5;
 double offdh=0.0;</declaration>
-		 
-     
-         <location id="id18" x="-68" y="-76">
-			 
-       
-             <name x="-78" y="-110">hoff</name>
-			 
-       
-             <label kind="invariant" x="-78" y="-59">humidity'==0.0</label>
-		
-    
-        </location>
-		 
-     
-         <location id="id19" x="-68" y="76">
-			 
-       
-             <name x="-78" y="42">hon</name>
-			 
-       
-             <label kind="invariant" x="-78" y="93">humidity'==0.5</label>
-		
-    
-        </location>
-		 
-     
-         <init ref="id18"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id19"/>
-			 
-       
-             <target ref="id18"/>
-			 
-       
-             <label kind="synchronisation" x="-17" y="-17">turn_hum_off[i]?</label>
-			 
-       
-             <label kind="assignment" x="-17" y="0">humidifier[i]=0</label>
-			 
-       
-             <nail x="17" y="0"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id18"/>
-			 
-       
-             <target ref="id19"/>
-			 
-       
-             <label kind="synchronisation" x="-187" y="-17">turn_hum_on[i]?</label>
-			 
-       
-             <label kind="assignment" x="-186" y="4">humidifier[i]=1</label>
-			 
-       
-             <nail x="-153" y="0"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>AirConditioner</name>
-		 
-     
-         <parameter>int i</parameter>
-		 
-     
-         <declaration>//controlled_device
+		<location id="id127" x="-68" y="-76">
+			<name x="-78" y="-110">hoff</name>
+			<label kind="invariant" x="-78" y="-59">humidity'==0.0</label>
+		</location>
+		<location id="id128" x="-68" y="76">
+			<name x="-78" y="42">hon</name>
+			<label kind="invariant" x="-78" y="93">humidity'==0.5</label>
+		</location>
+		<init ref="id127"/>
+		<transition>
+			<source ref="id128"/>
+			<target ref="id127"/>
+			<label kind="synchronisation" x="-17" y="-17">turn_hum_off[i]?</label>
+			<label kind="assignment" x="-17" y="0">humidifier[i]=0</label>
+			<nail x="17" y="0"/>
+		</transition>
+		<transition>
+			<source ref="id127"/>
+			<target ref="id128"/>
+			<label kind="synchronisation" x="-187" y="-17">turn_hum_on[i]?</label>
+			<label kind="assignment" x="-186" y="4">humidifier[i]=1</label>
+			<nail x="-153" y="0"/>
+		</transition>
+	</template>
+	<template>
+		<name>AirConditioner</name>
+		<parameter>int i</parameter>
+		<declaration>//controlled_device
 double offdt=0.0;
 double heatdt=0.5;
 double cooldt=-0.5;</declaration>
-		 
-     
-         <location id="id20" x="-17" y="25">
-			 
-       
-             <name x="-8" y="8">acoff</name>
-			 
-       
-             <label kind="invariant" x="-27" y="42">temperature'==0.0</label>
-		
-    
-        </location>
-		 
-     
-         <location id="id21" x="-212" y="136">
-			 
-       
-             <name x="-222" y="102">cool</name>
-			 
-       
-             <label kind="invariant" x="-222" y="153">temperature'==-0.5</label>
-		
-    
-        </location>
-		 
-     
-         <location id="id22" x="195" y="136">
-			 
-       
-             <name x="178" y="102">heat</name>
-			 
-       
-             <label kind="invariant" x="185" y="153">temperature'==0.5</label>
-		
-    
-        </location>
-		 
-     
-         <init ref="id20"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id20"/>
-			 
-       
-             <target ref="id22"/>
-			 
-       
-             <label kind="synchronisation" x="42" y="9">turn_ac_heat[i]?</label>
-			 
-       
-             <label kind="assignment" x="27" y="25">airConditioner[i]=2</label>
-			 
-       
-             <nail x="195" y="25"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id22"/>
-			 
-       
-             <target ref="id21"/>
-			 
-       
-             <label kind="synchronisation" x="-51" y="178">turn_ac_cool[i]?</label>
-			 
-       
-             <label kind="assignment" x="-59" y="195">airConditioner[i]=1</label>
-			 
-       
-             <nail x="-17" y="204"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id21"/>
-			 
-       
-             <target ref="id20"/>
-			 
-       
-             <label kind="synchronisation" x="-187" y="0">turn_ac_off[i]?</label>
-			 
-       
-             <label kind="assignment" x="-246" y="25">airConditioner[i]=0</label>
-			 
-       
-             <nail x="-212" y="25"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id22"/>
-			 
-       
-             <target ref="id20"/>
-			 
-       
-             <label kind="synchronisation" x="42" y="59">turn_ac_off[i]?</label>
-			 
-       
-             <label kind="assignment" x="42" y="76">airConditioner[i]=0</label>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id21"/>
-			 
-       
-             <target ref="id22"/>
-			 
-       
-             <label kind="synchronisation" x="-51" y="119">turn_ac_heat[i]?</label>
-			 
-       
-             <label kind="assignment" x="-59" y="136">airConditioner[i]=2</label>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id20"/>
-			 
-       
-             <target ref="id21"/>
-			 
-       
-             <label kind="synchronisation" x="-153" y="68">turn_ac_cool[i]?</label>
-			 
-       
-             <label kind="assignment" x="-170" y="85">airConditioner[i]=1</label>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>Camera</name>
-		 
-     
-         <parameter>int i</parameter>
-		 
-     
-         <declaration>//controlled_device</declaration>
-		 
-     
-         <location id="id23" x="0" y="0">
-			 
-       
-             <name x="-25" y="-34">cameraoff</name>
-		
-    
-        </location>
-		 
-     
-         <location id="id24" x="0" y="102">
-			 
-       
-             <name x="-25" y="110">cameraon</name>
-		
-    
-        </location>
-		 
-     
-         <init ref="id23"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id24"/>
-			 
-       
-             <target ref="id23"/>
-			 
-       
-             <label kind="synchronisation" x="18" y="59">turn_camera_off[i]?</label>
-			 
-       
-             <label kind="assignment" x="18" y="76">camera[i]=0</label>
-			 
-       
-             <nail x="76" y="51"/>
-		
-    
-        </transition>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id23"/>
-			 
-       
-             <target ref="id24"/>
-			 
-       
-             <label kind="synchronisation" x="-119" y="25">turn_camera_on[i]?</label>
-			 
-       
-             <label kind="assignment" x="-119" y="42">camera[i]=1</label>
-			 
-       
-             <nail x="-76" y="51"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>humidity_sensor</name>
-		 
-     
-         <declaration>//sensor
+		<location id="id129" x="-17" y="25">
+			<name x="-8" y="8">acoff</name>
+			<label kind="invariant" x="-27" y="42">temperature'==0.0</label>
+		</location>
+		<location id="id130" x="-212" y="136">
+			<name x="-222" y="102">cool</name>
+			<label kind="invariant" x="-222" y="153">temperature'==-0.5</label>
+		</location>
+		<location id="id131" x="195" y="136">
+			<name x="178" y="102">heat</name>
+			<label kind="invariant" x="185" y="153">temperature'==0.5</label>
+		</location>
+		<init ref="id129"/>
+		<transition>
+			<source ref="id129"/>
+			<target ref="id131"/>
+			<label kind="synchronisation" x="42" y="9">turn_ac_heat[i]?</label>
+			<label kind="assignment" x="27" y="25">airConditioner[i]=2</label>
+			<nail x="195" y="25"/>
+		</transition>
+		<transition>
+			<source ref="id131"/>
+			<target ref="id130"/>
+			<label kind="synchronisation" x="-51" y="178">turn_ac_cool[i]?</label>
+			<label kind="assignment" x="-59" y="195">airConditioner[i]=1</label>
+			<nail x="-17" y="204"/>
+		</transition>
+		<transition>
+			<source ref="id130"/>
+			<target ref="id129"/>
+			<label kind="synchronisation" x="-187" y="0">turn_ac_off[i]?</label>
+			<label kind="assignment" x="-246" y="25">airConditioner[i]=0</label>
+			<nail x="-212" y="25"/>
+		</transition>
+		<transition>
+			<source ref="id131"/>
+			<target ref="id129"/>
+			<label kind="synchronisation" x="42" y="59">turn_ac_off[i]?</label>
+			<label kind="assignment" x="42" y="76">airConditioner[i]=0</label>
+		</transition>
+		<transition>
+			<source ref="id130"/>
+			<target ref="id131"/>
+			<label kind="synchronisation" x="-51" y="119">turn_ac_heat[i]?</label>
+			<label kind="assignment" x="-59" y="136">airConditioner[i]=2</label>
+		</transition>
+		<transition>
+			<source ref="id129"/>
+			<target ref="id130"/>
+			<label kind="synchronisation" x="-153" y="68">turn_ac_cool[i]?</label>
+			<label kind="assignment" x="-170" y="85">airConditioner[i]=1</label>
+		</transition>
+	</template>
+	<template>
+		<name>Camera</name>
+		<parameter>int i</parameter>
+		<declaration>//controlled_device</declaration>
+		<location id="id132" x="0" y="0">
+			<name x="-25" y="-34">cameraoff</name>
+		</location>
+		<location id="id133" x="0" y="102">
+			<name x="-25" y="110">cameraon</name>
+		</location>
+		<init ref="id132"/>
+		<transition>
+			<source ref="id133"/>
+			<target ref="id132"/>
+			<label kind="synchronisation" x="18" y="59">turn_camera_off[i]?</label>
+			<label kind="assignment" x="18" y="76">camera[i]=0</label>
+			<nail x="76" y="51"/>
+		</transition>
+		<transition>
+			<source ref="id132"/>
+			<target ref="id133"/>
+			<label kind="synchronisation" x="-119" y="25">turn_camera_on[i]?</label>
+			<label kind="assignment" x="-119" y="42">camera[i]=1</label>
+			<nail x="-76" y="51"/>
+		</transition>
+	</template>
+	<template>
+		<name>humidity_sensor</name>
+		<declaration>//sensor
 //causal
 clock t;
 double get(){
     return humidity;
 }</declaration>
-		 
-     
-         <location id="id25" x="0" y="0">
-			 
-       
-             <label kind="invariant" x="-10" y="17">t&lt;=3</label>
-		
-    
-        </location>
-		 
-     
-         <init ref="id25"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id25"/>
-			 
-       
-             <target ref="id25"/>
-			 
-       
-             <label kind="guard" x="18" y="-68">t&gt;=3</label>
-			 
-       
-             <label kind="assignment" x="18" y="-34">t=0,humidity=get()</label>
-			 
-       
-             <nail x="68" y="-68"/>
-			 
-       
-             <nail x="68" y="59"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>pm_2_5_sensor</name>
-		 
-     
-         <declaration>//sensor
+		<location id="id134" x="0" y="0">
+			<label kind="invariant" x="-10" y="17">t&lt;=3</label>
+		</location>
+		<init ref="id134"/>
+		<transition>
+			<source ref="id134"/>
+			<target ref="id134"/>
+			<label kind="guard" x="18" y="-68">t&gt;=3</label>
+			<label kind="assignment" x="18" y="-34">t=0,humidity=get()</label>
+			<nail x="68" y="-68"/>
+			<nail x="68" y="59"/>
+		</transition>
+	</template>
+	<template>
+		<name>pm_2_5_sensor</name>
+		<declaration>//sensor
 //causal
 clock t;
 double get(){
     return pm_2_5;
 }</declaration>
-		 
-     
-         <location id="id26" x="24" y="69">
-			 
-       
-             <label kind="invariant" x="14" y="86">t&lt;=3</label>
-		
-    
-        </location>
-		 
-     
-         <init ref="id26"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id26"/>
-			 
-       
-             <target ref="id26"/>
-			 
-       
-             <label kind="guard" x="42" y="-3">t&gt;=3</label>
-			 
-       
-             <label kind="assignment" x="49" y="52">pm_2_5=get(),t=0</label>
-			 
-       
-             <nail x="109" y="-7"/>
-			 
-       
-             <nail x="109" y="137"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>temperature_sensor</name>
-		 
-     
-         <declaration>//sensor
+		<location id="id135" x="24" y="69">
+			<label kind="invariant" x="14" y="86">t&lt;=3</label>
+		</location>
+		<init ref="id135"/>
+		<transition>
+			<source ref="id135"/>
+			<target ref="id135"/>
+			<label kind="guard" x="42" y="-3">t&gt;=3</label>
+			<label kind="assignment" x="49" y="52">pm_2_5=get(),t=0</label>
+			<nail x="109" y="-7"/>
+			<nail x="109" y="137"/>
+		</transition>
+	</template>
+	<template>
+		<name>temperature_sensor</name>
+		<declaration>//sensor
 //causal
 clock t;
 double get(){
     return temperature;
 }</declaration>
-		 
-     
-         <location id="id27" x="-178" y="0">
-			 
-       
-             <label kind="invariant" x="-188" y="17">t&lt;=3</label>
-		
-    
-        </location>
-		 
-     
-         <init ref="id27"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id27"/>
-			 
-       
-             <target ref="id27"/>
-			 
-       
-             <label kind="guard" x="-161" y="-59">t&gt;=3</label>
-			 
-       
-             <label kind="assignment" x="-144" y="-25">t=0,
+		<location id="id136" x="-178" y="0">
+			<label kind="invariant" x="-188" y="17">t&lt;=3</label>
+		</location>
+		<init ref="id136"/>
+		<transition>
+			<source ref="id136"/>
+			<target ref="id136"/>
+			<label kind="guard" x="-161" y="-59">t&gt;=3</label>
+			<label kind="assignment" x="-144" y="-25">t=0,
 temperature=get()</label>
-			 
-       
-             <nail x="-93" y="-59"/>
-			 
-       
-             <nail x="-93" y="51"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>rain_sensor</name>
-		 
-     
-         <declaration>//sensor
+			<nail x="-93" y="-59"/>
+			<nail x="-93" y="51"/>
+		</transition>
+	</template>
+	<template>
+		<name>rain_sensor</name>
+		<declaration>//sensor
 //biddable
 clock t;
 int get(){
     return rain;
 }</declaration>
-		 
-     
-         <location id="id28" x="0" y="0">
-			 
-       
-             <label kind="invariant" x="-10" y="17">t&lt;=3</label>
-		
-    
-        </location>
-		 
-     
-         <init ref="id28"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id28"/>
-			 
-       
-             <target ref="id28"/>
-			 
-       
-             <label kind="guard" x="18" y="-68">t&gt;=3</label>
-			 
-       
-             <label kind="assignment" x="18" y="-34">t=0,rain=get()</label>
-			 
-       
-             <nail x="76" y="-68"/>
-			 
-       
-             <nail x="76" y="59"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>human_sensor</name>
-		 
-     
-         <declaration>//sensor
+		<location id="id137" x="0" y="0">
+			<label kind="invariant" x="-10" y="17">t&lt;=3</label>
+		</location>
+		<init ref="id137"/>
+		<transition>
+			<source ref="id137"/>
+			<target ref="id137"/>
+			<label kind="guard" x="18" y="-68">t&gt;=3</label>
+			<label kind="assignment" x="18" y="-34">t=0,rain=get()</label>
+			<nail x="76" y="-68"/>
+			<nail x="76" y="59"/>
+		</transition>
+	</template>
+	<template>
+		<name>human_sensor</name>
+		<declaration>//sensor
 //biddable
 clock t;
 int get(){
     return position;
 }</declaration>
-		 
-     
-         <location id="id29" x="0" y="0">
-			 
-       
-             <label kind="invariant" x="-10" y="17">t&lt;=3</label>
-		
-    
-        </location>
-		 
-     
-         <init ref="id29"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id29"/>
-			 
-       
-             <target ref="id29"/>
-			 
-       
-             <label kind="guard" x="51" y="-25">t&gt;=3</label>
-			 
-       
-             <label kind="assignment" x="51" y="9">t=0,position=get()</label>
-			 
-       
-             <nail x="85" y="-68"/>
-			 
-       
-             <nail x="85" y="76"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <template>
-		 
-     
-         <name>co2ppm_sensor</name>
-		 
-     
-         <declaration>//sensor
+		<location id="id138" x="0" y="0">
+			<label kind="invariant" x="-10" y="17">t&lt;=3</label>
+		</location>
+		<init ref="id138"/>
+		<transition>
+			<source ref="id138"/>
+			<target ref="id138"/>
+			<label kind="guard" x="51" y="-25">t&gt;=3</label>
+			<label kind="assignment" x="51" y="9">t=0,position=get()</label>
+			<nail x="85" y="-68"/>
+			<nail x="85" y="76"/>
+		</transition>
+	</template>
+	<template>
+		<name>co2ppm_sensor</name>
+		<declaration>//sensor
 //causal
 clock t;
 double get(){
     return co2ppm;
 }</declaration>
-		 
-     
-         <location id="id30" x="0" y="0">
-			 
-       
-             <label kind="invariant" x="-10" y="17">t&lt;=3</label>
-		
-    
-        </location>
-		 
-     
-         <init ref="id30"/>
-		 
-     
-         <transition>
-			 
-       
-             <source ref="id30"/>
-			 
-       
-             <target ref="id30"/>
-			 
-       
-             <label kind="guard" x="18" y="-72">t&gt;=3</label>
-			 
-       
-             <label kind="assignment" x="25" y="-17">co2ppm=get(),t=0</label>
-			 
-       
-             <nail x="85" y="-76"/>
-			 
-       
-             <nail x="85" y="68"/>
-		
-    
-        </transition>
-	
-  
-    </template>
-	 
-   
-     <system>PersonInstance=Person(50.0,100.0,150.0,200.0,250.0);
+		<location id="id139" x="0" y="0">
+			<label kind="invariant" x="-10" y="17">t&lt;=3</label>
+		</location>
+		<init ref="id139"/>
+		<transition>
+			<source ref="id139"/>
+			<target ref="id139"/>
+			<label kind="guard" x="18" y="-72">t&gt;=3</label>
+			<label kind="assignment" x="25" y="-17">co2ppm=get(),t=0</label>
+			<nail x="85" y="-76"/>
+			<nail x="85" y="68"/>
+		</transition>
+	</template>
+	<system>PersonInstance=Person(50.0,100.0,150.0,200.0,250.0);
 Bulb_0=Bulb(0);
 Bulb_1=Bulb(1);
 Window_3=Window(0);
@@ -2847,22 +1950,10 @@ Blind_1=Blind(1);
 TV_0=TV(0);
 Window_2=Window(3);
 system Rule30,Rule29,Rule28,Rule27,Rule26,Rule25,Rule24,Rule23,Rule22,Rule21,Rule20,Rule19,Rule18,Rule17,Rule16,Rule15,Rule14,Rule13,Rule12,Rule11,Rule10,Rule9,Rule8,Rule7,Rule6,Rule5,Rule4,Rule3,Rule2,Rule1,PersonInstance,Rain,Bulb_0,Bulb_1,Window_3,Window_0,AirPurifier_0,Window_1,Bulb_2,AirConditioner_0,Bulb_3,Bulb_4,Humidifier_0,Camera_0,Blind_0,Blind_1,TV_0,Window_2;</system>
-	 
-   
-     <queries>
-		 
-     
-         <query>
-			 
-       
-             <formula>simulate[&lt;=300] {humidity,pm_2_5,temperature,rain,position,co2ppm,tV[0],bulb[0],bulb[1],bulb[2],bulb[3],bulb[4],blind[0],blind[1],window[0],window[1],window[2],window[3],airPurifier[0],humidifier[0],airConditioner[0],camera[0],rule1,rule2,rule3,rule4,rule5,rule6,rule7,rule8,rule9,rule10,rule11,rule12,rule13,rule14,rule15,rule16,rule17,rule18,rule19,rule20,rule21,rule22,rule23,rule24,rule25,rule26,rule27,rule28,rule29,rule30,time}</formula>
-			 
-       
-             <comment/>
-		
-    
-        </query>
-	
-  
-    </queries>
+	<queries>
+		<query>
+			<formula>simulate[&lt;=300] {humidity,pm_2_5,temperature,rain,position,co2ppm,tV[0],bulb[0],bulb[1],bulb[2],bulb[3],bulb[4],blind[0],blind[1],window[0],window[1],window[2],window[3],airPurifier[0],humidifier[0],airConditioner[0],camera[0],rule1,rule2,rule3,rule4,rule5,rule6,rule7,rule8,rule9,rule10,rule11,rule12,rule13,rule14,rule15,rule16,rule17,rule18,rule19,rule20,rule21,rule22,rule23,rule24,rule25,rule26,rule27,rule28,rule29,rule30,time}</formula>
+			<comment></comment>
+		</query>
+	</queries>
 </nta>
